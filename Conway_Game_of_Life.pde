@@ -16,8 +16,6 @@ void setup()
 
   board = new boolean[boardHeight][boardWidth];
   boardBuffer = new boolean[boardHeight][boardWidth];
-//  cellWidth = width / boardWidth;
-//  cellHeight = height / boardHeight;  
 }
 
 void draw()
@@ -32,16 +30,11 @@ void draw()
   }
 
 //  println(frameRate);  
-  
-//  if(frameCount % 10 == 0)
-//  {
-//    saveFrame("life-#####");
-//  }
 }
 
 void iterate()
 {
-  if(!isPaused && frameCount % 5 == 0)
+  if(!isPaused && frameCount % 10 == 0)
   {
    println("Generation : " + frameCount);
    for(int r = 0 ; r < board.length ; r++)
@@ -112,11 +105,6 @@ int countCells(int row, int col)
   return count;
 }
 
-//void mouseDragged()
-//{
-//  board[mouseX/cellHeight][mouseY/cellWidth] = !board[mouseX/cellHeight][mouseY/cellWidth];
-//}
-
 void keyPressed()
 {
   if(key == 'r')
@@ -134,7 +122,6 @@ void keyPressed()
   {
     createPattern(1);
   }
-  
 }
 
 void erase()
@@ -199,6 +186,5 @@ void createPattern(int index)
         }
       }
     }
-
   }
 }
